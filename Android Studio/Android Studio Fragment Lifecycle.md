@@ -15,4 +15,4 @@
 * onPause(): The fragment has re-entered the STARTED state. The UI is visible to the user
 * onStop(): The fragment has re-entered the CREATED state. The object is instantiated but is no longer presented on screen.
 * onDestroyView(): Called right before the fragment enters the DESTROYED state. The view has already been removed from memory, but the fragment object still exists.
-* onDestroy(): The fragment enters the DESTROYED state.
+* onDestroy(): The fragment enters the DESTROYED state..
