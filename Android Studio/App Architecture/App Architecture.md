@@ -52,7 +52,7 @@ ViewModel is responsible for holding and processing all the data needed for the 
 </tr>
 </table>
 
-#### Add a ViewModel
+# Add a ViewModel
 
 Your app will be architected in the following way. MainActivity contains a GameFragment, and the GameFragment will access information about the game from the GameViewModel
 
@@ -97,3 +97,69 @@ private val viewModel = GameViewModel()
 * Instead, use the property delegate approach and delegate the responsibility of the viewModel object to a separate class called viewModels.
 * When you access the viewModel object, it is handled internally by the delegate class, viewModels.
 * Delegate class creates viewModel object ,retains its values  through configurational changes and returns the value when requested.
+
+# Move data to the ViewModel
+
+* Activities / Fragment classes are responsible for drawing views and data to the screen.
+* While ViewModel is responsible for holding and processing all the data needed for the UI.
+
+Set the data variables in the ViewModel class.
+```class ExampleViewModel : ViewModel() {
+
+    private var score = 0
+    private var currentWordCount = 0
+    private var currentScrambledWord = "test"
+...
+```
+>Problems:
+>private  properties in ViewModel are not accessible by the UI controller.
+To resolve this we cant make the visibility of the properties private because its risky because an outside class could change the data in unexpected ways that don't follow the game rules specified in the view model.
+*  For example, an outside class could change the score to a negative value.
+
+>Inside the ViewModel, the data should be editable, so they should be private and var. From outside the ViewModel, data should be readable, but not editable, so the data should be exposed as public and val. To achieve this behavior, Kotlin has a feature called a backing property.
+
+## Backing property
+
+A backing property allows you to return something from a getter other than the exact object.
+
+ To implement a backing property, you will override the getter method to return a read-only version of your data.
+
+ ```
+ // Declare private mutable variable that can only be modified
+// within the class it is declared.
+private var _count = 0 
+
+// Declare another public immutable field and override its getter method. 
+// Return the private property's value in the getter method.
+// When count is accessed, the get() function is called and
+// the value of _count is returned. 
+val count: Int
+   get() = _count
+
+```
+#### Inside the ViewModel class:
+* The property _count is private and mutable. Hence, it is only accessible and editable within the ViewModel class. The convention is to prefix the private property with an underscore.
+
+#### Outside the ViewModel class:
+
+* The default visibility modifier in Kotlin is public, so count is public and accessible from other classes like UI controllers.
+Since only the get() method is being overridden, this property is immutable and read-only.
+When an outside class accesses this property, it returns the value of _count and its value can't be modified.
+This protects the app data inside the ViewModel from unwanted and unsafe changes by external classes, but it allows external callers to safely access its value.
+
+#### Adding backing property to any property/variable in the ViewModel class:
+
+Inside the ViewModel class , change a property , say , score declaration to add a backing property.
+* Now, _score is accessible and editable only within the ViewModel class.
+* The UI Controller can access the value of _score by calling score.
+
+```
+private var _score = 0
+val score: Int
+   get() = _score
+```
+>Warning: Never expose mutable data fields from your ViewModel—make sure this data can't be modified from another class. Mutable data inside the ViewModel should always be private.
+
+
+
+
