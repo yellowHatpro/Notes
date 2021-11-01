@@ -160,6 +160,26 @@ val score: Int
 ```
 >Warning: Never expose mutable data fields from your ViewModel—make sure this data can't be modified from another class. Mutable data inside the ViewModel should always be private.
 
+## Lifecycle of a ViewModel
 
+ViewModel is alive as long as the scope of the activity or fragment is alive.
+* IMPORTANT: ViewModel is not destroyed if its owner is destroyed for a configuration change, such as screen rotation.
+The new instance of the owner reconnects to the existing ViewModel.
 
+![](https://developer.android.com/codelabs/basic-android-kotlin-training-viewmodel/img/18e67dc79f89d8a.png)
+
+* onCreate() is called when the ViewModel is created.
+* onCleared() is called when the ViewModel is destroyed.
+
+## Populating ViewModel
+
+Populate the ViewModel with helper functions that can be used by the UI controller , like score variable.
+
+* lateinit : Declares a variable that is not initialized until the first access.
+* Use the init block to initialize the lateinit properties in the class .
+```
+init{
+  The function that contains the lateinit properties.
+}
+```
 
