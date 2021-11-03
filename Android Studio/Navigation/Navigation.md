@@ -86,6 +86,7 @@ Example: <br>
             app:destination="@id/wordListFragment" />
     </fragment>
 ```
+>Note: Make sure activity main xml is inside a layout tag.
 ##### 4. Setting the Start Destination:
 
 On NavGraph xml file, set the start destination.
