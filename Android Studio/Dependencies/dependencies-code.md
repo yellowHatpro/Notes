@@ -23,6 +23,11 @@
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.4.1"
 
+    //Dagger Hilt
+    implementation "com.google.dagger:hilt-android:2.41"
+    kapt "com.google.dagger:hilt-compiler:2.41"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03"
+    kapt "androidx.hilt:hilt-compiler:1.0.0"
 
     //Image downloading and Caching library
     implementation 'com.github.bumptech.glide:glide:4.13.0'
