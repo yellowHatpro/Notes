@@ -1,5 +1,6 @@
 # Notes
 A github repo to keep my notes which I write while learning
-> Android Studio,
+> Mobile and Web Developement,
 > DSA,
-> Web Developement
+> new languages,
+> and other cool stuff.
