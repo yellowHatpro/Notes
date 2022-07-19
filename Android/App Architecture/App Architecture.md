@@ -59,19 +59,19 @@ Your app will be architected in the following way. MainActivity contains a GameF
 ![](https://developer.android.com/codelabs/basic-android-kotlin-training-viewmodel/img/2094f3414ddff9b9.png)
 
 * To use the ViewModel in your app, verify that you have the ViewModel library dependency inside the dependencies block. This step is already done for you.
-```
+```kotlin
 // ViewModel
 implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 ```
 * Create ViewModel class.
 
-```
+```kotlin
 class ExampleViewModel : ViewModel() {
 }
 ```
 * Add ViewModel to the activity or fragment.
     * To associate a ViewModel to a UI controller (activity / fragment), create a reference (object) to the ViewModel inside the UI controller.
-    ```
+    ```kotlin
     private val viewModel: ExampleViewModel by viewModels()
     ```
     > import androidx.fragment.app.viewModels.
@@ -86,12 +86,12 @@ Property delegation in Kotlin helps you to handoff the getter-setter responsibil
 This class (called delegate class) provides getter and setter functions of the property and handles its changes.
 A delegate property is defined using the by clause and a delegate class instance
 
-```
+```kotlin
 // Syntax for property delegation
 var <property-name> : <property-type> by <delegate-class>()
 ```
 If we initialize the view model using default GameViewModel constructor , app will lose the state of the viewModel reference when the device goes through a configuration change:
-```
+```kotlin
 private val viewModel = GameViewModel()
 ```
 * Instead, use the property delegate approach and delegate the responsibility of the viewModel object to a separate class called viewModels.
@@ -104,7 +104,8 @@ private val viewModel = GameViewModel()
 * While ViewModel is responsible for holding and processing all the data needed for the UI.
 
 Set the data variables in the ViewModel class.
-```class ExampleViewModel : ViewModel() {
+```kotlin
+class ExampleViewModel : ViewModel() {
 
     private var score = 0
     private var currentWordCount = 0
@@ -124,7 +125,7 @@ A backing property allows you to return something from a getter other than the e
 
  To implement a backing property, you will override the getter method to return a read-only version of your data.
 
- ```
+ ```kotlin
  // Declare private mutable variable that can only be modified
 // within the class it is declared.
 private var _count = 0 
@@ -153,7 +154,7 @@ Inside the ViewModel class , change a property , say , score declaration to add 
 * Now, _score is accessible and editable only within the ViewModel class.
 * The UI Controller can access the value of _score by calling score.
 
-```
+```kotlin
 private var _score = 0
 val score: Int
    get() = _score
@@ -177,7 +178,7 @@ Populate the ViewModel with helper functions that can be used by the UI controll
 
 * lateinit : Declares a variable that is not initialized until the first access.
 * Use the init block to initialize the lateinit properties in the class .
-```
+```kotlin
 init{
   The function that contains the lateinit properties.
 }
