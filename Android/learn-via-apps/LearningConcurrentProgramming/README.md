@@ -21,6 +21,7 @@ Earlier we used to have AsyncTask API, which wrapped up everything that needed t
   }
     ```
     - Easy switching between threads without callbacks
+    - Coroutine Context (Dispatchers.Main(UI Thread, short tasks ), Dispatchers.IO (bg thread, storage and network access), Dispatchers.Default (bg thread, cpu intensive tasks))
 
 - JobIntentService
   - This service supersedes IntentService.
@@ -34,3 +35,10 @@ Earlier we used to have AsyncTask API, which wrapped up everything that needed t
 - Background Service
 
 - Foreground Service
+
+- Difference between a Job and Deferred
+  - 'job' is an object that represents a coroutine's execution and is related to structured concurrency (we can cancel the job, and all the children of this job will also be cancelled)
+  > Job is a cancellable thing with a life-cycle that culminates in its completion.
+  - 'deferred' is analog of 'Future' in Java, which encapsulates an operation that will be finished at some point in future after it's initialization, but it is related to coroutines.
+  > Deferred value is a non-blocking cancellable future — it is a Job that has a result
+  - async builder gets us a deferred, launch builder gives us a job.
