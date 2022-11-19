@@ -5,6 +5,8 @@ import android.os.*
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.painterResource
 import org.yellowhatpro.learningconcurrentprogramming.ui.theme.LearningConcurrentProgrammingTheme
 import kotlin.concurrent.thread
 
@@ -87,3 +89,4 @@ class MainActivity : ComponentActivity() {
 private fun doSomething() {
     TODO("Not yet implemented")
 }
+
