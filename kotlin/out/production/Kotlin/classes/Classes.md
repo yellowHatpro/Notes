@@ -47,7 +47,7 @@
   - To do so, we use ```object``` keyword.
   - Example:
     ```kotlin
-    fun main(){
+    fun coroutines.main(){
     val a = 3.0
     val b = 4.0
     val height = 2.0
