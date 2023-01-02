@@ -1,0 +1,14 @@
+name: Learning Workflows P1
+
+on:
+  push:
+    branches: -main
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello job1
+        run: echo "Hello World"
+        shell: bash
