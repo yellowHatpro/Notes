@@ -7,9 +7,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  job1:
+  hi:
     runs-on: ubuntu-latest
     steps:
-      - name: hello job1
+      - name: hi job
         run: echo "Hello World"
+        shell: bash
+  
+  bye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: bye job
+        run: echo "Bye Bye"
         shell: bash
