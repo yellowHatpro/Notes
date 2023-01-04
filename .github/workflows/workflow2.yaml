@@ -13,5 +13,5 @@ jobs:
       - name: Get all directories
         run: |
           echo "Getting all directories"
-          ls
+          "All Directories are:" >> allDirectories.txt
         shell: bash
