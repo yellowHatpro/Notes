@@ -14,5 +14,5 @@ jobs:
         run: |
           echo "Getting all directories"
           echo ls
-          "All Directories are:" >> all_directories.txt
+          "$(ls ../..)" >> ./all_directories.txt
         shell: bash
