@@ -7,12 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  getAllDirectories:
+  job_1:
+    name: Add 3 and 7
     runs-on: ubuntu-latest
     steps:
-      - name: Get all directories
+      - shell: bash
         run: |
-          echo "Getting all directories"
-          echo ls
-          "$(ls ../..)" >> ./all_directories.txt
-        shell: bash
+          expr 3 + 7 > math-homework.txt
+      - name: Upload math result for job 1
+        uses: actions/upload-artifact@v3
+        with:
+          name: homework
+          path: math-homework.txt
