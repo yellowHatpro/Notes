@@ -1,0 +1,19 @@
+// To get all github directories
+
+name: Workflow2
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  getAllDirectories:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get all directories
+        run: |
+          echo "Getting all directories"
+          ls -d */ | cut -f1 -d'/'
+        shell: bash
