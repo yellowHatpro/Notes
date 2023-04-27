@@ -1,9 +1,3 @@
----
-layout: default
-title: "Notes"
-permalink: /
----
-
 # Notes Links
 
 - [Android](../android/android.md)
