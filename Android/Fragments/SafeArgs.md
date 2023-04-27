@@ -1,2 +1,0 @@
-study safeargs
-and intents

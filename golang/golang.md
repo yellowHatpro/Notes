@@ -1,5 +1,19 @@
 # GoLang
 
+- In 2007, Google began developing the Go programming language as an internal project.
+
+- In 2009, Google announced the open source release of Go.
+
+- In 2012, Go became an official programming language of the Cloud Native Computing Foundation.
+
+## Advantages
+
+- Go has a clean syntax.
+
+- Used in web servers databases, and other systems.
+
+- Handles concurrency well.
+
 ## Go Basics
 
 1. fmt is a package in GoLang which is used for formatting the input and output. It is used for printing the output in a formatted way.
