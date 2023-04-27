@@ -6,7 +6,7 @@ permalink: /
 
 # Notes Links
 
-- [Android](Notes/android)
+- [Android](.Android/android.md)
 - [Dart](./dart/dart.md)
 - [GoLang](./golang/golang.md)
 - [Kotlin](./kotlin/kotlin.md)
