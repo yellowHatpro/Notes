@@ -1,3 +1,9 @@
+---
+layout: default
+title: "Notes"
+permalink: /android
+---
+
 # Android Notes
 
 ## Links to different topics
