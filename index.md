@@ -4,7 +4,9 @@ title: "Notes"
 permalink: /
 ---
 
-# Notes Links
+It's fun to learn and explore. Hope you find this useful.
+
+# Links to various topics
 
 - [Android](./Android/android.md)
 - [Dart](./dart/dart.md)
