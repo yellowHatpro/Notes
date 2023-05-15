@@ -7,3 +7,5 @@
 ## [Objects](./objects.md)
 
 ## [Higher-order Functions](./higher_order_functions.md)
+
+## [Promise](./promise.md)
