@@ -2,7 +2,9 @@ package generics.variance
 
 /*Variance: Relationship between generic types,
 that share the same base type but have different type arguments
+
 Need of variance relationship: Type Safety
+
 variance modifiers: determine what the relationship should be between generic types
 */
 
@@ -23,6 +25,14 @@ class Bar<in T>
 open class Drunkard
 class Dinosaur: Drunkard()
 
+/*
+* out modifier is only appropriate for type parameters that are in the out-position
+* and are thus used as a result type or a read-only property type
+*
+*  the in modifier is only appropriate for type parameters that are in the in-position
+* and are thus used as parameter types.
+* */
+
 class Variance {
     fun main(){
         //invariant
@@ -33,7 +43,7 @@ class Variance {
         val person: Person = Student()
         val school: School<Person> = School<Student>() // Subtype can be passed in place of parent
 
-        //contravariant
+        //contravariant: Supertype has to be passed
         val drunkard: Drunkard = Dinosaur()
         // val bar: Bar<Drunkard> = Bar<Dinosaur>()      //Subtype can't be passed in place of parent
         val bar: Bar<Dinosaur> = Bar<Drunkard>()         //Ok example does not make sense, but you get the idea

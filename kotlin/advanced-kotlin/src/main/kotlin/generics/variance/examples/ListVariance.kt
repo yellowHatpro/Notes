@@ -1,4 +1,4 @@
-package generics.variance
+package generics.variance.examples
 //USE CASE IN LIST, MUTABLE LIST
 /*
 Covariance(out) is a proper variance modifier,
@@ -9,6 +9,7 @@ MutableList interface has an invariant type parameter,
 so it has no variance modifier
 * */
 
+//For this example, consider List<out T>
 
 interface Animal {
     fun pet()
@@ -40,11 +41,11 @@ fun addAnimal(animals: MutableList<Animal>) {
 
 
 
-class RealTimeVarianceExamples {
+class ListVariance {
     fun main() {
         val cats: List<Cat> = listOf(Cat("Puss"), Cat("Suss"))
         petAnimals(cats) // Works, since List interface type parameter is covariant, so it has out modifier
-        val dogs: List<Dog> = listOf(Dog("Sheru"),Dog("Rocky"))
+        val dogs: List<Dog> = listOf(Dog("Sheru"), Dog("Rocky"))
         // addAnimal(dogs) // ERROR: Can't use MutableList<Dog> instead of MutableList<Animal>
         // addAnimal(cats) // ERROR: Can't use MutableList<Cat> instead of MutableList<Animal>
     }
