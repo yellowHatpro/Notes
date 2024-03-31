@@ -21,7 +21,7 @@ class Student: Person()
 // Contravariant type: use in modifier
 class Bar<in T>
 open class Drunkard
-class Dog: Drunkard()
+class Dinosaur: Drunkard()
 
 class Variance {
     fun main(){
@@ -34,8 +34,8 @@ class Variance {
         val school: School<Person> = School<Student>() // Subtype can be passed in place of parent
 
         //contravariant
-        val drunkard: Drunkard = Dog()
-        // val bar: Bar<Drunkard> = Bar<Dog>()      //Subtype can't be passed in place of parent
-        val bar: Bar<Dog> = Bar<Drunkard>()         //Ok example does not make sense, but you get the idea
+        val drunkard: Drunkard = Dinosaur()
+        // val bar: Bar<Drunkard> = Bar<Dinosaur>()      //Subtype can't be passed in place of parent
+        val bar: Bar<Dinosaur> = Bar<Drunkard>()         //Ok example does not make sense, but you get the idea
     }
 }
